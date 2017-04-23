@@ -1,0 +1,15 @@
+notifications:
+  email:
+    recipients:
+      - kou@cozmixng.org
+
+sudo: required
+
+services:
+  - docker
+
+install:
+  - docker build -t red-data-tools/red-arrow-nmatrix .
+
+script:
+  - docker run red-data-tools/red-arrow-nmatrix /bin/sh -c "bundle exec rake"
