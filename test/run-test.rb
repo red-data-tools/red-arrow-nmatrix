@@ -29,7 +29,9 @@ $LOAD_PATH.unshift(lib_dir.to_s)
 
 if system("type make > /dev/null")
   Dir.chdir(ext_dir) do
-    system("make -j8 > /dev/null") or exit(false)
+    if File.exist?("Makefile")
+      system("make -j8 > /dev/null") or exit(false)
+    end
   end
 end
 

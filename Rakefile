@@ -16,6 +16,7 @@
 
 require "rubygems"
 require "bundler/gem_helper"
+require "rake/extensiontask"
 require "packnga"
 
 base_dir = File.join(File.dirname(__FILE__))
@@ -27,6 +28,12 @@ end
 
 helper.install
 spec = helper.gemspec
+
+Rake::ExtensionTask.new("arrow_nmatrix", spec) do |ext|
+  ext.ext_dir = "ext/arrow-nmatrix"
+  ext.cross_platform = ["x86-mingw32", "x64-mingw32"]
+  ext.cross_compile = true
+end
 
 Packnga::DocumentTask.new(spec) do |task|
   task.original_language = "en"
