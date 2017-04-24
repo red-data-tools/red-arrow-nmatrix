@@ -39,7 +39,7 @@ Gem::Specification.new do |spec|
   spec.files += [".yardopts"]
   spec.files += Dir.glob("lib/**/*.rb")
   spec.files += Dir.glob("doc/text/*")
-  spec.extensions = FileList["ext/arrow-nmatrix/extconf.rb"]
+  spec.extensions = ["ext/arrow-nmatrix/extconf.rb"]
   spec.test_files += Dir.glob("test/**/*")
 
   spec.add_runtime_dependency("red-arrow")
