@@ -2,7 +2,7 @@
 
 ## 0.0.2 - 2017-05-18
 
-### Fixed
+### Fixes
 
   * Added missing C source files.
 
