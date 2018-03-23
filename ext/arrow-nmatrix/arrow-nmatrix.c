@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Kouhei Sutou <kou@clear-code.com>
+ * Copyright 2017-2018 Kouhei Sutou <kou@clear-code.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ garrow_type_to_nmatrix_dtype(GArrowType arrow_type)
     nmatrix_type = FLOAT64;
     break;
   case GARROW_TYPE_NA:
-  case GARROW_TYPE_BOOL:
+  case GARROW_TYPE_BOOLEAN:
   case GARROW_TYPE_UINT16:
   case GARROW_TYPE_UINT32:
   case GARROW_TYPE_UINT64:
