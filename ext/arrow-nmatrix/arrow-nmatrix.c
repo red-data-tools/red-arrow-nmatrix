@@ -61,17 +61,28 @@ garrow_type_to_nmatrix_dtype(GArrowType arrow_type)
   case GARROW_TYPE_HALF_FLOAT:
   case GARROW_TYPE_STRING:
   case GARROW_TYPE_BINARY:
+  case GARROW_TYPE_FIXED_SIZE_BINARY:
   case GARROW_TYPE_DATE32:
   case GARROW_TYPE_DATE64:
   case GARROW_TYPE_TIMESTAMP:
   case GARROW_TYPE_TIME32:
   case GARROW_TYPE_TIME64:
-  case GARROW_TYPE_INTERVAL:
-  case GARROW_TYPE_DECIMAL:
+  case GARROW_TYPE_INTERVAL_MONTHS:
+  case GARROW_TYPE_INTERVAL_DAY_TIME:
+  case GARROW_TYPE_DECIMAL128:
+  case GARROW_TYPE_DECIMAL256:
   case GARROW_TYPE_LIST:
   case GARROW_TYPE_STRUCT:
-  case GARROW_TYPE_UNION:
+  case GARROW_TYPE_SPARSE_UNION:
+  case GARROW_TYPE_DENSE_UNION:
   case GARROW_TYPE_DICTIONARY:
+  case GARROW_TYPE_MAP:
+  case GARROW_TYPE_EXTENSION:
+  case GARROW_TYPE_FIXED_SIZE_LIST:
+  case GARROW_TYPE_DURATION:
+  case GARROW_TYPE_LARGE_STRING:
+  case GARROW_TYPE_LARGE_BINARY:
+  case GARROW_TYPE_LARGE_LIST:
   default:
     break;
   }
@@ -132,25 +143,25 @@ nmatrix_dtype_to_garrow_data_type(nm_dtype_t nmatrix_type)
 
   switch (nmatrix_type) {
   case BYTE:
-    arrow_data_type = garrow_uint8_data_type_new();
+    arrow_data_type = GARROW_DATA_TYPE(garrow_uint8_data_type_new());
     break;
   case INT8:
-    arrow_data_type = garrow_int8_data_type_new();
+    arrow_data_type = GARROW_DATA_TYPE(garrow_int8_data_type_new());
     break;
   case INT16:
-    arrow_data_type = garrow_int16_data_type_new();
+    arrow_data_type = GARROW_DATA_TYPE(garrow_int16_data_type_new());
     break;
   case INT32:
-    arrow_data_type = garrow_int32_data_type_new();
+    arrow_data_type = GARROW_DATA_TYPE(garrow_int32_data_type_new());
     break;
   case INT64:
-    arrow_data_type = garrow_int64_data_type_new();
+    arrow_data_type = GARROW_DATA_TYPE(garrow_int64_data_type_new());
     break;
   case FLOAT32:
-    arrow_data_type = garrow_float_data_type_new();
+    arrow_data_type = GARROW_DATA_TYPE(garrow_float_data_type_new());
     break;
   case FLOAT64:
-    arrow_data_type = garrow_double_data_type_new();
+    arrow_data_type = GARROW_DATA_TYPE(garrow_double_data_type_new());
     break;
   case COMPLEX64:
   case COMPLEX128:

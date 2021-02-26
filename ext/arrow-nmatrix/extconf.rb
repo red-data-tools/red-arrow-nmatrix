@@ -14,7 +14,7 @@
 
 require "mkmf-gnome2"
 
-required_pkg_config_package("arrow-glib")
+required_pkg_config_package(["arrow-glib", 3])
 
 [
   ["glib2", "ext/glib2"],
