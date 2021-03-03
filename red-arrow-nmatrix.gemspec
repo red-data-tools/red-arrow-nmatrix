@@ -43,7 +43,7 @@ Gem::Specification.new do |spec|
   spec.extensions = ["ext/arrow-nmatrix/extconf.rb"]
   spec.test_files += Dir.glob("test/**/*")
 
-  spec.add_runtime_dependency("red-arrow")
+  spec.add_runtime_dependency("red-arrow", ">= 3.0.0")
   spec.add_runtime_dependency("nmatrix")
 
   spec.add_development_dependency("bundler")
