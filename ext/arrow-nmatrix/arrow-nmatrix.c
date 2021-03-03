@@ -176,7 +176,7 @@ nmatrix_dtype_to_garrow_data_type(nm_dtype_t nmatrix_type)
 static VALUE
 rb_nmatrix_to_arrow(VALUE self)
 {
-  GArrowDoubleDataType *data_type;
+  GArrowDataType *data_type;
   GArrowBuffer *data;
   GArrowTensor *tensor;
   VALUE rb_tensor;
@@ -191,7 +191,7 @@ rb_nmatrix_to_arrow(VALUE self)
   }
   data = garrow_buffer_new((const guint8 *)NM_DENSE_ELEMENTS(self),
                            NM_SIZEOF_DTYPE(self) * NM_DENSE_COUNT(self));
-  tensor = garrow_tensor_new(GARROW_DATA_TYPE(data_type),
+  tensor = garrow_tensor_new(data_type,
                              data,
                              (gint64 *)(NM_STORAGE(self)->shape),
                              NM_DIM(self),
