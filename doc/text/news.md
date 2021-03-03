@@ -1,5 +1,11 @@
 # News
 
+## 0.0.4 - 2021-03-03
+
+### Improvements
+
+  * Require Apache Arrow GLib 3.0.0 or later.
+
 ## 0.0.3 - 2018-03-23
 
 ### Improvements
