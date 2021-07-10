@@ -28,7 +28,7 @@ matrix.to_arrow   # -> An object of Arrow::Tensor
 
 ## Dependencies
 
-* [Red Arrow](https://github.com/red-data-tools/red-arrow)
+* [Red Arrow](https://github.com/apache/arrow/tree/master/ruby/red-arrow)
 
 * [NMatrix](https://github.com/SciRuby/nmatrix)
 
